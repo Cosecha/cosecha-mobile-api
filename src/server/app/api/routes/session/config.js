@@ -3,10 +3,10 @@ import Joi from 'joi';
 const username = {
   validate: {
     payload: {
-      email: Joi.string().required(),
-      password: Joi.string().required(),
+      phone: Joi.string().required(),
     },
   },
+  auth: false,
 };
 
 export default {

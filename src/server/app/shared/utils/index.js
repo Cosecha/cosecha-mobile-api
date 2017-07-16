@@ -1,4 +1,5 @@
 import bcrypt from 'bcrypt-nodejs';
+import twilio from 'twilio';
 
 export const ensureObjectExists = (obj, msg) => new Promise((resolve, reject) => {
   if (obj) {
@@ -46,3 +47,26 @@ export const hashPassword = (nonHashed, salt) => new Promise((resolve, reject) =
     }
   });
 });
+
+export const sendSMS = (message, phoneNumber) => {
+  const sendTwilioSMS = () => new Promise((resolve, reject) => {
+    const twilioSID = process.env.TWILIO_SID;
+    const twilioToken = process.env.TWILIO_AUTH_TOKEN;
+    const client = new twilio(twilioSID, twilioToken);
+    client.messages.create({
+      body: message,
+      to: `+1${phoneNumber}`,  // Text this number
+      from: process.env.TWILIO_PHONE_NUMBER, // From a valid Twilio number
+    })
+    .then((message) => {
+      console.log(message.sid);
+      resolve();
+    })
+    .catch((err) => {
+      console.log(err);
+      reject(err);
+    });
+  });
+
+  return sendTwilioSMS();
+};

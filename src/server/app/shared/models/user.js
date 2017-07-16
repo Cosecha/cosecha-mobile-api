@@ -10,17 +10,13 @@ const userSchema = new Schema({
     type: Number,
     default: 1,
   },
+  phone: {
+    type: String,
+    required: false,
+  },
   profile: {
     type: {
       _id: false,
-      email: {
-        type: String,
-        required: true,
-      },
-      phone: {
-        type: String,
-        required: false,
-      },
       receivesAlerts: {
         type: Boolean,
         default: false,

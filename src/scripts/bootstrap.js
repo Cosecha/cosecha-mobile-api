@@ -109,9 +109,8 @@ deletedb().then(disconnect)
     console.log(`Password: ${res}`);
     console.log('Creating first user...');
     return User.create({
+      phone: '5555555555',
       profile: {
-        email: 'person@mail.com',
-        phoneNumber: '5555555555',
       },
       password: hash1,
     });
@@ -120,9 +119,8 @@ deletedb().then(disconnect)
     user1 = user;
     console.log(`New user created (${user.profile.email})... now creating another user...`);
     return User.create({
+      phone: '5556667777',
       profile: {
-        email: 'person2@mail.com',
-        phoneNumber: '5556667777',
       },
       password: hash1,
     });
@@ -130,41 +128,6 @@ deletedb().then(disconnect)
   .then((user) => {
     user2 = user;
     console.log(`New user created (${user.profile.email})... now creating a raid...`);
-    return Raid.create({
-      userId: user1.id,
-      zip: '85004',
-      geo: {
-        lat: '33.4591465',
-        long: '-112.0774334',
-      },
-      description: 'ICE checkpoint',
-      type: 'checkpoint',
-      present: {
-        police: false,
-        ice: true,
-        cpb: false,
-      },
-    });
-  })
-  .then((raid) => {
-    console.log(`New raid created (${raid.description})... now creating a raid...`);
-    return Raid.create({
-      userId: user2.id,
-      zip: '85012',
-      geo: {
-        lat: '33.5083858',
-        long: '-112.0774334',
-      },
-      description: 'ICE is at the school',
-      type: 'public',
-      present: {
-        police: true,
-        ice: true,
-        cpb: false,
-      },
-    });
-  })
-  .then(() => {
     console.log('Finished bootstrapping.');
     process.exit(0);
   })
