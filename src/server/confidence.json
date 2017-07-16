@@ -14,13 +14,13 @@
         {
           "plugin": "./app/shared/plugins/cors",
           "options": {
-            "select": ["api", "admin"]
+            "select": ["api"]
           }
         },
         {
           "plugin": "./app/shared/plugins/db",
           "options": {
-            "select": ["api", "admin"]
+            "select": ["api"]
           }
         },
         {
@@ -37,13 +37,13 @@
         {
           "plugin": "./app/shared/plugins/cors",
           "options": {
-            "select": ["api", "admin"]
+            "select": ["api"]
           }
         },
         {
           "plugin": "./app/shared/plugins/db-test",
           "options": {
-            "select": ["api", "admin"]
+            "select": ["api"]
           }
         },
         {
