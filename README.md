@@ -1,15 +1,5 @@
-# redadalertas-api
-A public API for the web app, and mobile apps to consume.
-
-## Welcome
-
-If you are reading this, thanks for stopping by. You may be familiar with the [Redadalertas](http://github.com/cosecha/redadalertas) project.
-
-This project is part of that. This repo will house the code to make the public facing API.
-
-## API Documentation
-
-[https://cosecha.github.io/redadalertas-api/](https://cosecha.github.io/redadalertas-api/)
+# Cosecha Mobile Api
+A public API for the mobile app, and mobile apps to consume.
 
 ## Dependencies
 
