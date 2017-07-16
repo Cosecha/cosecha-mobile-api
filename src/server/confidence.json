@@ -1,15 +1,11 @@
 {
   "connections": [
     {
-      "port": 8080,
+      "port": 5050,
       "labels": ["api"],
       "routes": {
         "cors": true
       }
-    },
-    {
-      "port": 8081,
-      "labels": ["admin"]
     }
   ],
   "registrations": {
